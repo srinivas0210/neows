@@ -1,0 +1,31 @@
+.list {
+    padding: 20px 100px;
+}
+
+.list .list__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff7f2;
+    color:  #4450a5;
+}
+
+/* .list .list__items .list__menuIcon {
+    
+} */
+.list .list__items .list__asteroidId{
+    flex:0.3;
+}
+.list .list__items .list__asteroidName {
+    flex:0.45;
+}
+.list .list__items .list__myFav {
+    flex:0.05;
+}
+.list__myFav .MuiSvgIcon-root {
+    font-size: 30px;
+    color: #4450a5;
+}
+.list__myFav .MuiSvgIcon-root:hover {
+    cursor: pointer;
+}

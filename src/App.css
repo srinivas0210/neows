@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* reusables */ 
+.flex {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+/* component -> app */
+.app {
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #4450a5;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app .app__header {
+  justify-content: space-between;
+  width: 100%;
+  height: 30%;
+  background-color: #fff7f2;
+}
+.app .app__list {
+  width: 100%;
+  height: 70%;
+  overflow-y: scroll;
+}
+.app .app__listHeading {
+  background-color:  #4450a5 ;
+  padding: 10px;
+  align-self: flex-start;
+}
+
+.app__searchId {
+  flex : 0.4;
+}
+.app__myFav {
+  flex : 0.2;
+}
+
+.app__myFav .MuiSvgIcon-root {
+  font-size: 70px;
+  color: #4450a5;
+}
+.app__myFav .MuiSvgIcon-root:hover {
+  cursor: pointer;
+}
+.app .app__header .app__searchDates {
+  flex: 0.4;
+  justify-content: space-between;
 }
