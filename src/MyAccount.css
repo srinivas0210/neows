@@ -1,0 +1,38 @@
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.myAccount {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.myAccount img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -50;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.neows__description , .authentication {
+    flex: 0.5;
+    max-width: 50%;
+    height: 100%;
+}
+
+.neows__description {
+    padding: 10px;
+    color:white;
+    /* background-color: black; */
+    
+}
+.authentication {
+    color: white;
+    /* background-color: yellowgreen; */
+}

@@ -30,7 +30,8 @@ function Login() {
                if (userName == doc.data().userName && password == doc.data().password) {
                     setUserId(doc.id);
                     console.log(doc.id);
-
+                    console.log(doc.data());
+                    // &fav=${doc.collection('favorites').doc('favorites')
                     history.push(`/?userName=${userName}&userId=${doc.id}`); 
                 }
             })
@@ -38,7 +39,7 @@ function Login() {
     }
 
     const goToSignUpPage = () => {
-        history.push("/signup");
+        history.push("/account/signup");
     }
     return (
         <div className="login flex">
@@ -50,7 +51,7 @@ function Login() {
                 <LockOutlinedIcon />
             </div>
 
-            <h1 style={{ margin: '15px' }}>Login</h1>
+            <h1 style={{ margin: '15px' ,color:'black'}}>Login</h1>
             <div className="login__form flex">
                 <form  className={classes.root} noValidate autoComplete="off">
                     <TextField
@@ -59,6 +60,7 @@ function Login() {
                         variant="outlined"
                         color="secondary"
                         onChange={(e)=>setUserName(e.target.value)}
+                        
                     />
                     <br />
                     <TextField
@@ -81,7 +83,7 @@ function Login() {
 
                     <br />
                     <div className="flex">
-                        <p>or</p>
+                        <p style={{color : 'black'}}>or</p>
                     </div>
                     <div  className={classes.root && 'flex'}>
                         <Button 

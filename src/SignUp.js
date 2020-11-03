@@ -1,4 +1,4 @@
-import React, {useState, useEffect}from 'react';
+import React, { useState, useEffect } from 'react';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -10,7 +10,7 @@ import {
     Link,
     Redirect,
     useHistory,
-  } from "react-router-dom";
+} from "react-router-dom";
 import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
 
 import db from './Firebase';
@@ -19,12 +19,12 @@ import db from './Firebase';
 import './SignUp.css';
 
 function Login() {
-    const [userId , setUserId] = useState('');
-    const [userName , setUserName] = useState('');
-    const [password , setPassword] = useState('');
-    const [confirmPassword , setConfirmPassword] = useState('');
-    const [error , setError] = useState(false);
-    const [helpingText , setHelpingText] = useState('Same as the password');
+    const [userId, setUserId] = useState('');
+    const [userName, setUserName] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [error, setError] = useState(false);
+    const [helpingText, setHelpingText] = useState('Same as the password');
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -39,7 +39,7 @@ function Login() {
 
     const signUp = () => {
         if (password != confirmPassword) {
-            
+
             history.push('/signup');
             setError(true);
             setHelpingText('Different from the password,Try again');
@@ -50,8 +50,8 @@ function Login() {
                 userName: userName,
                 password: password,
             })
-            history.push('/login');
-        }  
+            history.push('/account/login');
+        }
     }
 
     return (
@@ -64,45 +64,45 @@ function Login() {
                 <PersonOutlineOutlinedIcon />
             </div>
 
-            <h1 style={{ margin: '15px' }}>SIGN UP</h1>
+            <h1 style={{color: 'black', margin: '15px' }}>SIGN UP</h1>
             <div className="login__form flex">
-                <form  className={classes.root} noValidate autoComplete="off">
+                <form className={classes.root} noValidate autoComplete="off">
                     <TextField
                         id="outlined-secondary"
                         label="First Name"
                         helperText="* this will be your userName"
                         variant="outlined"
                         color="secondary"
-                        onChange={(e)=>setUserName(e.target.value)}
+                        onChange={(e) => setUserName(e.target.value)}
                     />
-                    
+
                     <TextField
                         id="outlined-secondary"
                         label="Last Name"
                         variant="outlined"
                         color="secondary"
-                        
+
                     />
-                    
+
                     <br />
-                    
+
                     <TextField
                         id="outlined-secondary"
                         label="Email"
                         variant="outlined"
                         color="secondary"
-                        style={{ width: '524px'}}
-                        
+                        style={{ width: '524px' }}
+
                     />
-                    <br/>
+                    <br />
                     <TextField
                         id="outlined-secondary"
                         label="Password"
                         type="password"
                         variant="outlined"
                         color="secondary"
-                        style={{ width: '524px'}}
-                        onChange={(e)=>setPassword(e.target.value)}
+                        style={{ width: '524px' }}
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                     <br />
                     <TextField
@@ -113,19 +113,17 @@ function Login() {
                         type="password"
                         variant="outlined"
                         color="secondary"
-                        style={{ width: '524px'}}
-                        onChange={(e)=>setConfirmPassword(e.target.value)}
+                        style={{ width: '524px' }}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
                     />
-                    
-                    <div  className={classes.root && 'flex signUp'}>
-                        <Button 
-                        onClick={signUp}
-                        style={{backgroundColor: '#4450a5' }}
-                         variant="contained" 
-                         color="primary">
+                    <div className={classes.root}>
+                        <Button
+                            onClick={signUp}
+                            style={{ width: '510px', backgroundColor: '#4450a5' }}
+                            variant="contained"
+                            color="primary">
                             Sign Up
                         </Button>
-                        
                     </div>
                 </form>
             </div>

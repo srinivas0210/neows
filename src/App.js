@@ -4,9 +4,10 @@ import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 
 import Login from './Login';
-import Home from './Home';
 import SignUp from './SignUp';
+import Home from './Home';
 import SearchById from './SearchById';
+import MyAccount from './MyAccount';
 
 const theme = createMuiTheme({
 	palette: {
@@ -26,8 +27,7 @@ function App() {
 				<div>
 					<Switch>
 						<Route exact path="/" component={Home} />
-						<Route exact path="/login" component={Login} />
-						<Route exact path="/signup" component={SignUp} />
+						<Route path="/account" component={MyAccount} />
 						<Route exact path="/asteroidById" component={SearchById} />
 					</Switch>
 				</div>

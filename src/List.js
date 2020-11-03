@@ -54,7 +54,7 @@ function List({ item , userId ,addToMyFav , removeFromFav}) {
             addToMyFav(item.id);
         }
         else if (!userId) {
-            history.push('/login');
+            history.push('/account/login');
         }
         else{
             removeFromFav(item.id);
@@ -95,11 +95,11 @@ function List({ item , userId ,addToMyFav , removeFromFav}) {
                 <BookmarkBorderOutlinedIcon />
                 }
             </div>
-            <div className="list__link">
+            {/* <div className="list__link">
             
             <FontAwesomeIcon className="linkIcon" icon={faLink} />
                 
-            </div>
+            </div> */}
 
         </div>
     )

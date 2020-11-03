@@ -127,6 +127,7 @@ function Home() {
     setLoading(false)
   }
   const searchAsteroidByDate = () => {
+    setLoading(true)
     fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&detailed=true&api_key=${KEY}`)
       .then((response) => response.json())
       .then((data) => {
@@ -146,12 +147,13 @@ function Home() {
             );
           });
         })
+        setLoading(false);
         setListItems(asteroidsByDates);
       })
   }
   const showMyFav = async () => {
     if (!userId) {
-      history.push('/login')
+      history.push('/account/login')
     }
     console.log(myFav, 'myFav');
 
@@ -178,7 +180,34 @@ function Home() {
 
   return (
     <div className="home flex">
+      <div className="home__title flex">
+        <h1>N<br /><br />E<br /><br />O<br /><br />W<br /><br />S</h1>
+      </div>
+      <div className="home__details flex" >
+        <div className='home__list flex'>
+          
+          {loading ? <p>loading...</p> : <>
 
+            {listItems ? listItems.map((item, index) => {
+              return <List
+                key={index}
+                item={item}
+                userId={userId}
+                addToMyFav={addToMyFav}
+                removeFromFav={removeFromFav} />
+            }) : ''}
+
+          </>}
+        </div>
+        <div className="home__listHeading">
+          <h1>Hey {userName}! , here are the {listItems.length} asteroids</h1>
+        </div>
+      
+        <div className="home__border"></div>
+
+      </div>
+ 
+ 
       <div className="home__header flex">
         <div className="home__searchId">
           <SearchById />
@@ -186,25 +215,16 @@ function Home() {
         <div className="home__myFav" onClick={showMyFav}>
           <StarsSharpIcon />
         </div>
+        <div className="home__searchDates">
         <SearchByDate />
+        </div>
+        
+        
       </div>
-      
-        <div className="home__listHeading">
-          <h1>Hey {userName}! , here are the {listItems.length} asteroids</h1>
-        </div>
-        <div className='home__list flex'>
-        {loading ? <p>loading...</p> : <>
-          
-          {listItems ? listItems.map((item, index) => {
-            return <List
-              key={index}
-              item={item}
-              userId={userId}
-              addToMyFav={addToMyFav}
-              removeFromFav={removeFromFav} />
-          }) : ''}
-          </> }
-        </div>
+
+            
+
+
     </div>
   );
 }

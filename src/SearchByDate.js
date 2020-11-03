@@ -18,15 +18,19 @@ function SearchByDate() {
     let history = useHistory();
     
     //methods 
-    const callSearchByDates = () => {
-        const start = [startDate.getFullYear(), ('0' + (startDate.getMonth() + 1)).slice(-2), ('0' + startDate.getDate()).slice(-2)].join('-');
-        const end = [endDate.getFullYear(), ('0' + (endDate.getMonth() + 1)).slice(-2), ('0' + endDate.getDate()).slice(-2)].join('-');
+    const callSearchByDates = (dateStart,dateEnd) => {
+        const start = [dateStart.getFullYear(), ('0' + (dateStart.getMonth() + 1)).slice(-2), ('0' + dateStart.getDate()).slice(-2)].join('-');
+        const end = [dateEnd.getFullYear(), ('0' + (dateEnd.getMonth() + 1)).slice(-2), ('0' + dateEnd.getDate()).slice(-2)].join('-');
+        // const start = [startDate.getFullYear(), ('0' + (startDate.getMonth() + 1)).slice(-2), ('0' + startDate.getDate()).slice(-2)].join('-');
+        // const end = [endDate.getFullYear(), ('0' + (endDate.getMonth() + 1)).slice(-2), ('0' + endDate.getDate()).slice(-2)].join('-');
         history.push(`/?startDate=${start}&endDate=${end}`);
+        
+        console.log(dateStart , dateEnd);
     }
     return (
         <div className="searchByName">
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                <Grid container justify="space-around" className="home__searchDates flex">
+                <Grid container  >
                     <KeyboardDatePicker
                         margin="normal"
                         id="date-picker-dialog"
@@ -37,7 +41,11 @@ function SearchByDate() {
                         KeyboardButtonProps={{
                             'aria-label': 'change date',
                         }}
-                    />
+                    />      
+                </Grid>
+            </MuiPickersUtilsProvider>
+            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                <Grid container  >
                     <KeyboardDatePicker
                         margin="normal"
                         id="date-picker-dialog"
@@ -45,7 +53,7 @@ function SearchByDate() {
                         format="MM/dd/yyyy"
                         value={endDate}
                         onChange={(e) => {
-                            callSearchByDates();
+                            callSearchByDates(startDate,e);
                             setEndDate(e);
                         }}
                         KeyboardButtonProps={{

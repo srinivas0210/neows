@@ -4,7 +4,7 @@
   align-items: center;
 }
 .list {
-  margin: 30px 50px;
+  margin: 40px 10px;
   position: relative;
 }
 .list > div {
@@ -14,7 +14,6 @@
 }
 .list > div:first-child:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  transform: scale(1.05);
   transition: all ease 0.3s;
 }
 
@@ -28,7 +27,7 @@
 
 .list .list__id {
   position: absolute;
-  top: -20px;
+  top: -18px;
   background-color: white;
   padding: 4px 10px;
   color: #4450a5;
@@ -38,8 +37,8 @@
 
 .list .list__fav {
   position: absolute;
-  background-color: white;
-  top: -20px;
+  background-color: transparent;
+  top: -4px;
   right: 10px;
   border: none;
   
