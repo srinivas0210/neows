@@ -10,6 +10,7 @@
     height: 100vh;
 }
 .login .MuiSvgIcon-root {
+    color:white;
     font-size: 40px !important;
 }
 

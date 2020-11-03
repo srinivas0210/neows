@@ -1,31 +1,74 @@
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .list {
-    padding: 20px 100px;
+  margin: 30px 50px;
+  position: relative;
+}
+.list > div {
+  max-width: 230px;
+  transition: all ease 0.3s;
+  border: 1px solid #4450a5;
+}
+.list > div:first-child:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  transition: all ease 0.3s;
 }
 
 .list .list__items {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff7f2;
-    color:  #4450a5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff7f2;
+  color: #4450a5;
 }
 
-/* .list .list__items .list__menuIcon {
-    
-} */
-.list .list__items .list__asteroidId{
-    flex:0.3;
+.list .list__id {
+  position: absolute;
+  top: -20px;
+  background-color: white;
+  padding: 4px 10px;
+  color: #4450a5;
+  border: 1px solid #4450a5;
+  border-radius: 4px;
 }
-.list .list__items .list__asteroidName {
-    flex:0.45;
+
+.list .list__fav {
+  position: absolute;
+  background-color: white;
+  top: -20px;
+  right: 10px;
+  border: none;
+  
 }
-.list .list__items .list__myFav {
-    flex:0.05;
+
+.list .list__fav .MuiSvgIcon-root {
+  font-size: 30px;
+  color: #4450a5;
+  cursor: pointer;
 }
-.list__myFav .MuiSvgIcon-root {
-    font-size: 30px;
+
+.list__favAdded .MuiSvgIcon-root {
     color: #4450a5;
 }
-.list__myFav .MuiSvgIcon-root:hover {
-    cursor: pointer;
+/* .list__myFav .MuiSvgIcon-root {
+  font-size: 30px;
+  color: #4450a5;
+} */
+/* .list__myFav .MuiSvgIcon-root:hover {
+  cursor: pointer;
+} */
+.list .list__link {
+  border:none;
+}
+.linkIcon {
+  position: absolute;
+  right: 0;
+  color: #4450a5;
+  bottom: 100px;
+  right: -10px;
+  font-size : 30px !important;
 }

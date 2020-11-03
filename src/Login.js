@@ -3,14 +3,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    Redirect,
-    useHistory,
-  } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import db from './Firebase';
 
@@ -38,7 +31,7 @@ function Login() {
                     setUserId(doc.id);
                     console.log(doc.id);
 
-                    history.push("/"); 
+                    history.push(`/?userName=${userName}&userId=${doc.id}`); 
                 }
             })
         })
@@ -88,7 +81,7 @@ function Login() {
 
                     <br />
                     <div className="flex">
-                        <h1>Or</h1>
+                        <p>or</p>
                     </div>
                     <div  className={classes.root && 'flex'}>
                         <Button 
