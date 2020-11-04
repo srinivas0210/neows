@@ -1,7 +1,7 @@
 const data = {
   "links": {
-    "next": "http://www.neowsapp.com/rest/v1/neo/browse?page=1&size=10&api_key=DEMO_KEY",
-    "self": "http://www.neowsapp.com/rest/v1/neo/browse?page=0&size=10&api_key=DEMO_KEY"
+    "next": "https://www.neowsapp.com/rest/v1/neo/browse?page=1&size=10&api_key=DEMO_KEY",
+    "self": "https://www.neowsapp.com/rest/v1/neo/browse?page=0&size=10&api_key=DEMO_KEY"
   },
   "page": {
     "size": 10,
@@ -12,13 +12,13 @@ const data = {
   "near_earth_objects": [
     {
       "links": {
-        "self": "http://www.neowsapp.com/rest/v1/neo/2021277?api_key=DEMO_KEY"
+        "self": "https://www.neowsapp.com/rest/v1/neo/2021277?api_key=DEMO_KEY"
       },
       "id": "2021277",
       "neo_reference_id": "2021277",
       "name": "21277 (1996 TO5)",
       "designation": "21277",
-      "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2021277",
+      "nasa_jpl_url": "https://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2021277",
       "absolute_magnitude_h": 16.1,
       "estimated_diameter": {
         "kilometers": {
@@ -91,13 +91,13 @@ const data = {
     },
     {
       "links": {
-        "self": "http://www.neowsapp.com/rest/v1/neo/2162038?api_key=DEMO_KEY"
+        "self": "https://www.neowsapp.com/rest/v1/neo/2162038?api_key=DEMO_KEY"
       },
       "id": "2162038",
       "neo_reference_id": "2162038",
       "name": "162038 (1996 DH)",
       "designation": "162038",
-      "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2162038",
+      "nasa_jpl_url": "https://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2162038",
       "absolute_magnitude_h": 16.6,
       "estimated_diameter": {
         "kilometers": {
@@ -152,13 +152,13 @@ const data = {
     },
     {
       "links": {
-        "self": "http://www.neowsapp.com/rest/v1/neo/2189058?api_key=DEMO_KEY"
+        "self": "https://www.neowsapp.com/rest/v1/neo/2189058?api_key=DEMO_KEY"
       },
       "id": "2189058",
       "neo_reference_id": "2189058",
       "name": "189058 (2000 UT16)",
       "designation": "189058",
-      "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2189058",
+      "nasa_jpl_url": "https://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2189058",
       "absolute_magnitude_h": 16.5,
       "estimated_diameter": {
         "kilometers": {
@@ -213,13 +213,13 @@ const data = {
     },
     {
       "links": {
-        "self": "http://www.neowsapp.com/rest/v1/neo/2276274?api_key=DEMO_KEY"
+        "self": "https://www.neowsapp.com/rest/v1/neo/2276274?api_key=DEMO_KEY"
       },
       "id": "2276274",
       "neo_reference_id": "2276274",
       "name": "276274 (2002 SS41)",
       "designation": "276274",
-      "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2276274",
+      "nasa_jpl_url": "https://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2276274",
       "absolute_magnitude_h": 17.2,
       "estimated_diameter": {
         "kilometers": {
@@ -274,13 +274,13 @@ const data = {
     },
     {
       "links": {
-        "self": "http://www.neowsapp.com/rest/v1/neo/2322913?api_key=DEMO_KEY"
+        "self": "https://www.neowsapp.com/rest/v1/neo/2322913?api_key=DEMO_KEY"
       },
       "id": "2322913",
       "neo_reference_id": "2322913",
       "name": "322913 (2002 CM1)",
       "designation": "322913",
-      "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2322913",
+      "nasa_jpl_url": "https://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2322913",
       "absolute_magnitude_h": 16.7,
       "estimated_diameter": {
         "kilometers": {
@@ -335,13 +335,13 @@ const data = {
     },
     {
       "links": {
-        "self": "http://www.neowsapp.com/rest/v1/neo/2435730?api_key=DEMO_KEY"
+        "self": "https://www.neowsapp.com/rest/v1/neo/2435730?api_key=DEMO_KEY"
       },
       "id": "2435730",
       "neo_reference_id": "2435730",
       "name": "435730 (2008 UK90)",
       "designation": "435730",
-      "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2435730",
+      "nasa_jpl_url": "https://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2435730",
       "absolute_magnitude_h": 18.9,
       "estimated_diameter": {
         "kilometers": {
@@ -396,13 +396,13 @@ const data = {
     },
     {
       "links": {
-        "self": "http://www.neowsapp.com/rest/v1/neo/2451297?api_key=DEMO_KEY"
+        "self": "https://www.neowsapp.com/rest/v1/neo/2451297?api_key=DEMO_KEY"
       },
       "id": "2451297",
       "neo_reference_id": "2451297",
       "name": "451297 (2010 TK54)",
       "designation": "451297",
-      "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2451297",
+      "nasa_jpl_url": "https://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2451297",
       "absolute_magnitude_h": 19.2,
       "estimated_diameter": {
         "kilometers": {
@@ -457,14 +457,14 @@ const data = {
     },
     {
       "links": {
-        "self": "http://www.neowsapp.com/rest/v1/neo/2452307?api_key=DEMO_KEY"
+        "self": "https://www.neowsapp.com/rest/v1/neo/2452307?api_key=DEMO_KEY"
       },
       "id": "2452307",
       "neo_reference_id": "2452307",
       "name": "452307 Manawydan (1997 XV11)",
       "name_limited": "Manawydan",
       "designation": "452307",
-      "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2452307",
+      "nasa_jpl_url": "https://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2452307",
       "absolute_magnitude_h": 18.2,
       "estimated_diameter": {
         "kilometers": {
@@ -519,13 +519,13 @@ const data = {
     },
     {
       "links": {
-        "self": "http://www.neowsapp.com/rest/v1/neo/2452421?api_key=DEMO_KEY"
+        "self": "https://www.neowsapp.com/rest/v1/neo/2452421?api_key=DEMO_KEY"
       },
       "id": "2452421",
       "neo_reference_id": "2452421",
       "name": "452421 (2002 VX99)",
       "designation": "452421",
-      "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2452421",
+      "nasa_jpl_url": "https://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2452421",
       "absolute_magnitude_h": 18.4,
       "estimated_diameter": {
         "kilometers": {
@@ -580,13 +580,13 @@ const data = {
     },
     {
       "links": {
-        "self": "http://www.neowsapp.com/rest/v1/neo/2453100?api_key=DEMO_KEY"
+        "self": "https://www.neowsapp.com/rest/v1/neo/2453100?api_key=DEMO_KEY"
       },
       "id": "2453100",
       "neo_reference_id": "2453100",
       "name": "453100 (2007 WU4)",
       "designation": "453100",
-      "nasa_jpl_url": "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2453100",
+      "nasa_jpl_url": "https://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2453100",
       "absolute_magnitude_h": 18.9,
       "estimated_diameter": {
         "kilometers": {
@@ -656,7 +656,7 @@ const convToAsteroidObject = (object, myFav) => {
 
 const searchAsteroidById = async (asteroidId, KEY, myFav, setListItems, setLoading) => {
   setLoading(true)
-  const response = await fetch(`http://www.neowsapp.com/rest/v1/neo/${asteroidId}?api_key=${KEY}`)
+  const response = await fetch(`https://www.neowsapp.com/rest/v1/neo/${asteroidId}?api_key=${KEY}`)
   const object = await response.json()
   setListItems([
     {
@@ -674,7 +674,7 @@ const searchAsteroidById = async (asteroidId, KEY, myFav, setListItems, setLoadi
 
 const searchAsteroidByDates = (start, end, KEY, myFav, setListItems, setLoading) => {
   setLoading(true)
-  fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${start}&end_date=${end}&detailed=true&api_key=${KEY}`)
+  fetch(`httpss://api.nasa.gov/neo/rest/v1/feed?start_date=${start}&end_date=${end}&detailed=true&api_key=${KEY}`)
     .then((response) => response.json())
     .then((data) => {
       const asteroidsByDates = [];
@@ -699,14 +699,30 @@ const showMyFav = async (userId, KEY, myFav, setLoading, setListItems, history) 
     const favAsteroids = []
     setLoading(true)
     for (const favId of myFav) {
-      const response = await fetch(`http://www.neowsapp.com/rest/v1/neo/${favId}?api_key=${KEY}`)
+      const response = await fetch(`https://www.neowsapp.com/rest/v1/neo/${favId}?api_key=${KEY}`)
       const object = await response.json()
       favAsteroids.push(convToAsteroidObject(object, myFav));
     }
     setLoading(false)
     setListItems(favAsteroids);
+    // setLoading(true)
+    // myFav.map(async (favId) => {
+    //   await fetch(`https://www.neowsapp.com/rest/v1/neo/${favId}?api_key=${KEY}`)
+    //     .then((response) => response.json())
+    //     .then((object) => {
+    //       favAsteroids.push(convToAsteroidObject(object, myFav));
+    //     })
+    //   setLoading(false)
+    //   setListItems(favAsteroids);
+    // })
+
+    console.log(favAsteroids);
+
+
   }
+
 }
+
 const goToSignUpPage = (history) => {
   history.push("/account/signup");
 }
@@ -724,7 +740,7 @@ const signIn = async (userName, password, history, db) => {
   }
 }
 
-const addFavToFirebase = (favArray , db , userId) => {
+const addFavToFirebase = (favArray, db, userId) => {
   db.collection('users').doc(userId).collection('favorites').doc('favorites').set({
     favorites: favArray,
   });
