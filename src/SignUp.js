@@ -1,20 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    Redirect,
-    useHistory,
-} from "react-router-dom";
 import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
 
 import db from './Firebase';
-
+import KEY, { useStyles } from './constants';
 
 import './SignUp.css';
 
@@ -25,30 +16,29 @@ function Login() {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState(false);
     const [helpingText, setHelpingText] = useState('Same as the password');
-
-    const useStyles = makeStyles((theme) => ({
-        root: {
-            '& > *': {
-                margin: theme.spacing(1),
-                width: '25ch',
-            },
-        },
-    }));
     const classes = useStyles();
     let history = useHistory();
 
     const signUp = () => {
         if (password != confirmPassword) {
-
             history.push('/signup');
             setError(true);
             setHelpingText('Different from the password,Try again');
-
         }
         else {
             db.collection('users').add({
                 userName: userName,
                 password: password,
+            })
+            console.log(userId);
+            db.collection('users').onSnapshot((snapshot)=> {
+                snapshot.docs.map((doc)=> {
+                   if (userName == doc.data().userName && password == doc.data().password) {
+                    db.collection('users').doc(doc.id).collection('favorites').doc('favorites').set({
+                        favorites: [ ],
+                      });        
+                    }
+                })
             })
             history.push('/account/login');
         }
@@ -63,7 +53,6 @@ function Login() {
             }} >
                 <PersonOutlineOutlinedIcon />
             </div>
-
             <h1 style={{color: 'black', margin: '15px' }}>SIGN UP</h1>
             <div className="login__form flex">
                 <form className={classes.root} noValidate autoComplete="off">
@@ -75,24 +64,19 @@ function Login() {
                         color="secondary"
                         onChange={(e) => setUserName(e.target.value)}
                     />
-
                     <TextField
                         id="outlined-secondary"
                         label="Last Name"
                         variant="outlined"
                         color="secondary"
-
                     />
-
                     <br />
-
                     <TextField
                         id="outlined-secondary"
                         label="Email"
                         variant="outlined"
                         color="secondary"
                         style={{ width: '524px' }}
-
                     />
                     <br />
                     <TextField

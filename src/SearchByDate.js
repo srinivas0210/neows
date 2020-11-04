@@ -16,16 +16,25 @@ function SearchByDate() {
     const [endDate, setEndDate] = React.useState(new Date('2014-08-20T21:11:54'));
 
     let history = useHistory();
-    
+
     //methods 
-    const callSearchByDates = (dateStart,dateEnd) => {
+    const callSearchByDates = (dateStart, dateEnd) => {
+
         const start = [dateStart.getFullYear(), ('0' + (dateStart.getMonth() + 1)).slice(-2), ('0' + dateStart.getDate()).slice(-2)].join('-');
         const end = [dateEnd.getFullYear(), ('0' + (dateEnd.getMonth() + 1)).slice(-2), ('0' + dateEnd.getDate()).slice(-2)].join('-');
-        // const start = [startDate.getFullYear(), ('0' + (startDate.getMonth() + 1)).slice(-2), ('0' + startDate.getDate()).slice(-2)].join('-');
-        // const end = [endDate.getFullYear(), ('0' + (endDate.getMonth() + 1)).slice(-2), ('0' + endDate.getDate()).slice(-2)].join('-');
-        history.push(`/?startDate=${start}&endDate=${end}`);
-        
-        console.log(dateStart , dateEnd);
+
+        const date1 = new Date(start);
+        const date2 = new Date(end);
+        const diffTime = Math.abs(date2 - date1);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        if (diffDays > 7) {
+            alert('date difference shoul not exceed 7 days , please try again');
+        }
+        else {
+            history.push(`/?startDate=${start}&endDate=${end}`);
+        }
+
+        console.log(dateStart, dateEnd);
     }
     return (
         <div className="searchByName">
@@ -41,7 +50,7 @@ function SearchByDate() {
                         KeyboardButtonProps={{
                             'aria-label': 'change date',
                         }}
-                    />      
+                    />
                 </Grid>
             </MuiPickersUtilsProvider>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -53,7 +62,7 @@ function SearchByDate() {
                         format="MM/dd/yyyy"
                         value={endDate}
                         onChange={(e) => {
-                            callSearchByDates(startDate,e);
+                            callSearchByDates(startDate, e);
                             setEndDate(e);
                         }}
                         KeyboardButtonProps={{

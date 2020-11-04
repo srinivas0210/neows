@@ -27,6 +27,7 @@ function App() {
 				<div>
 					<Switch>
 						<Route exact path="/" component={Home} />
+						
 						<Route path="/account" component={MyAccount} />
 						<Route exact path="/asteroidById" component={SearchById} />
 					</Switch>

@@ -5,7 +5,7 @@ import Login from './Login';
 import SignUp from './SignUp';
 
 import './MyAccount.css';
-import picture from './images/Asteroids_Earth_web_1024.jpg';
+import picture from './images/asteroid.jpg';
 
 function MyAccount({ match }) {
     console.log(match.url);

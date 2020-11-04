@@ -50,9 +50,9 @@
   cursor: pointer;
 }
 
-.list__favAdded .MuiSvgIcon-root {
+/* .list__favAdded .MuiSvgIcon-root {
     color: #4450a5;
-}
+} */
 /* .list__myFav .MuiSvgIcon-root {
   font-size: 30px;
   color: #4450a5;

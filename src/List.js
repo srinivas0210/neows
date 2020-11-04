@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 
 //material-ui 
@@ -16,15 +16,15 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
-import { faLink } from '@fortawesome/free-solid-svg-icons'
-
-// js file imports
-import db from './Firebase';
 // css file 
 import './List.css';
 
 function List({ item , userId ,addToMyFav , removeFromFav}) {
-    const [fav, setFav] = useState(false);
+    const [fav, setFav] = useState(item.fav);
+    
+    let history = useHistory();
+    const [a, setA] = useState('');
+    
     const useStyles = makeStyles({
         root: {
             minWidth: 275,
@@ -40,13 +40,10 @@ function List({ item , userId ,addToMyFav , removeFromFav}) {
         pos: {
             marginBottom: 12,
         },
-    });
+    }); 
     const classes = useStyles();
-    let history = useHistory();
-
     const bull = <span className={classes.bullet}>•</span>;
     // methods
-
     const myFav = () => {
         console.log(fav);
         setFav(!fav);
@@ -82,25 +79,20 @@ function List({ item , userId ,addToMyFav , removeFromFav}) {
                     </Typography>
                 </CardContent>
                 <CardActions>
+                    <a target="blank" style={{textDecoration:'none'}} href={item.nasaUrl} >
                     <Button size="small">Learn More</Button>
+                    </a>
                 </CardActions>
             </Card>
-
             <div className="list__id">
                 <p>{item.id}</p>
             </div>
-            <div className={`list__fav ${fav && 'list__favAdded'}`} onClick={myFav}>
+            <div className={`list__fav`} onClick={myFav}>
                 {fav ? 
                 <BookmarkOutlinedIcon /> :
                 <BookmarkBorderOutlinedIcon />
-                }
+                } 
             </div>
-            {/* <div className="list__link">
-            
-            <FontAwesomeIcon className="linkIcon" icon={faLink} />
-                
-            </div> */}
-
         </div>
     )
 }
