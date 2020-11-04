@@ -705,20 +705,7 @@ const showMyFav = async (userId, KEY, myFav, setLoading, setListItems, history) 
     }
     setLoading(false)
     setListItems(favAsteroids);
-    // setLoading(true)
-    // myFav.map(async (favId) => {
-    //   await fetch(`https://www.neowsapp.com/rest/v1/neo/${favId}?api_key=${KEY}`)
-    //     .then((response) => response.json())
-    //     .then((object) => {
-    //       favAsteroids.push(convToAsteroidObject(object, myFav));
-    //     })
-    //   setLoading(false)
-    //   setListItems(favAsteroids);
-    // })
-
     console.log(favAsteroids);
-
-
   }
 
 }
