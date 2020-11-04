@@ -89,48 +89,56 @@ function Home() {
   }
 
   return (
-    <div className="home flex">
-      <div className="home__title flex">
-        <h1>N<br /><br />E<br /><br />O<br /><br />W<br /><br />S</h1>
+    <>
+      <div className="home flex">
+        <div className="home__title flex">
+          <h1>N<br /><br />E<br /><br />O<br /><br />W<br /><br />S</h1>
+        </div>
+        <div className="home__details flex" >
+          <div className='home__list flex'>
+            {loading ?
+              <div style={{ flexDirection: 'column' }} className="flex">
+                <LoopOutlinedIcon />
+                <br />
+                <p>Please wait ,while asteroids are inching forward</p>
+              </div> : <>
+                {listItems ? listItems.map((item, index) => {
+                  return <List
+                    key={`${index}_${item.fav}`}
+                    item={item}
+                    userId={userId}
+                    addToMyFav={addToMyFav}
+                    removeFromFav={removeFromFav} />
+                }) : ''}
+              </>}
+          </div>
+          <div className="home__listHeading">
+            <h1>Hey {userName}! , here are the {listItems.length} asteroids</h1>
+          </div>
+          <div className="home__border"></div>
+        </div>
+        <div className="home__header flex">
+          <FontAwesomeIcon className="home__filter" icon={faFilter} />
+          <div className="home__searchId">
+            <SearchById />
+          </div>
+          <div className="home__myFav flex"
+            onClick={() => showMyFav(userId, KEY, myFav, setLoading, setListItems, history)}>
+            <StarsSharpIcon />
+            <p>My Favorites</p>
+          </div>
+          <div className="home__searchDates">
+            <SearchByDate />
+          </div>
+        </div>
       </div>
-      <div className="home__details flex" >
-        <div className='home__list flex'>
-          {loading ?
-            <div style={{ flexDirection: 'column' }} className="flex">
-              <LoopOutlinedIcon />
-              <br />
-              <p>Please wait ,while asteroids are inching forward</p>
-            </div> : <>
-              {listItems ? listItems.map((item, index) => {
-                return <List
-                  key={`${index}_${item.fav}`}
-                  item={item}
-                  userId={userId}
-                  addToMyFav={addToMyFav}
-                  removeFromFav={removeFromFav} />
-              }) : ''}
-            </>}
-        </div>
-        <div className="home__listHeading">
-          <h1>Hey {userName}! , here are the {listItems.length} asteroids</h1>
-        </div>
-        <div className="home__border"></div>
+
+      <div className="visitOverBigScreens">
+          <h1 style={{margin:'20px'}}>NeoWs</h1>
+
+          <h4>Please visit the application on desktop or on devices with wider display</h4>
       </div>
-      <div className="home__header flex">
-        <FontAwesomeIcon className="home__filter" icon={faFilter} />
-        <div className="home__searchId">
-          <SearchById />
-        </div>
-        <div className="home__myFav flex"
-          onClick={() => showMyFav(userId, KEY, myFav, setLoading, setListItems, history)}>
-          <StarsSharpIcon />
-          <p>My Favorites</p>
-        </div>
-        <div className="home__searchDates">
-          <SearchByDate />
-        </div>
-      </div>
-    </div>
+    </>
   );
 }
 

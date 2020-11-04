@@ -674,7 +674,7 @@ const searchAsteroidById = async (asteroidId, KEY, myFav, setListItems, setLoadi
 
 const searchAsteroidByDates = (start, end, KEY, myFav, setListItems, setLoading) => {
   setLoading(true)
-  fetch(`httpss://api.nasa.gov/neo/rest/v1/feed?start_date=${start}&end_date=${end}&detailed=true&api_key=${KEY}`)
+  fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${start}&end_date=${end}&detailed=true&api_key=${KEY}`)
     .then((response) => response.json())
     .then((data) => {
       const asteroidsByDates = [];
